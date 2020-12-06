@@ -1,0 +1,10 @@
+scalar stringOrBoolean
+
+
+extend type Query {
+  isLoggedIn: Boolean!
+  isDarkTheme: Boolean!
+  sidebarShow: stringOrBoolean!
+  loadingBarStatus: Int!
+  permisosSession: viewier_permisos!
+}

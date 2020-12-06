@@ -1,0 +1,30 @@
+overwrite: true
+schema: 
+  - ${API_URI:http://localhost:4000/graphql}
+  - "src/apollo-client/typedef.graphql"
+documents: 
+  - './src/app/**/*.graphql'
+  - '!./src/app/generated'
+generates:
+  src/app/generated/api.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+      - "fragment-matcher"
+    config:
+      apolloClientVersion: 3
+      skipTypeNameForRoot: false
+    hooks:
+      afterOneFileWrite:
+        - eslint --fix
+
+  # src/app/generated/persisted-query-ids/client.json:
+  #     - graphql-codegen-persisted-query-ids:
+  #           output: client
+  #           algorithm: sha256
+
+  # src/app/generated/persisted-query-ids/server.json:
+  #     - graphql-codegen-persisted-query-ids:
+  #           output: server
+  #           algorithm: sha256

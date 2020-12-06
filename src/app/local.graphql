@@ -11,7 +11,7 @@ query GetLoginStatus {
 }
 
 query GetPermisosSession {
-  permisosSession @client{
+  permisosSession @client {
     tienda
     admin
   }

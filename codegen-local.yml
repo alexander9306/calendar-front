@@ -1,0 +1,17 @@
+overwrite: true
+schema: "http://localhost:8000/___graphql"
+documents: 
+ - './src/**/*.{ts,tsx}'
+ - '!./src/app/generated'
+ - './node_modules/gatsby*/!(node_modules)/**/*.js'
+generates:
+  src/generated/static.tsx:
+    plugins:
+      - "typescript"
+      - "fragment-matcher"
+      - "typescript-operations"
+    config:
+      skipTypeNameForRoot: true
+    hooks:
+      afterOneFileWrite:
+        - eslint --fix

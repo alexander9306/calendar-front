@@ -1,0 +1,31 @@
+{
+    "processors": [
+        [
+            "stylelint-processor-styled-components",
+            {
+                "moduleName": "styled-components",
+                "importName": "default",
+                "strict": false,
+                "ignoreFiles": [],
+                "parserPlugins": [
+                    "tsx",
+                    [
+                        "decorators",
+                        {
+                            "decoratorsBeforeExport": true
+                        }
+                    ],
+                    "classProperties",
+                    "exportExtensions",
+                    "functionBind",
+                    "functionSent"
+                ]
+            }
+        ]
+    ],
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-styled-components",
+        "stylelint-config-prettier"
+    ]
+}

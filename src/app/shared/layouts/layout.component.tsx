@@ -1,9 +1,7 @@
 import React from "react";
 import { CContainer } from "@coreui/react";
 import LoadingBar from "./loading-bar.component";
-import Sidebar from "./sidebar.component";
 import Footer from "./footer.component";
-import Header from "./header.component";
 
 import "../../../assets/scss/style.scss";
 
@@ -13,7 +11,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
     <>
       <LoadingBar />
       <div className="c-app">
-        <Sidebar />
         <div className="c-wrapper">
           {/* <Header /> */}
           <div className="c-body ">

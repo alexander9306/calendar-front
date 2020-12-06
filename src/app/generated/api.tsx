@@ -89,6 +89,22 @@ export type GetEventsQuery = (
   )> }
 );
 
+export type GetSideBarShowQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSideBarShowQuery = (
+  { __typename?: 'Query' }
+  & Pick<Query, 'sidebarShow'>
+);
+
+export type GetLoadingBarStatusQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetLoadingBarStatusQuery = (
+  { __typename?: 'Query' }
+  & Pick<Query, 'loadingBarStatus'>
+);
+
 
 export const GetEventsDocument = gql`
     query GetEvents {
@@ -124,6 +140,66 @@ export function useGetEventsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<
 export type GetEventsQueryHookResult = ReturnType<typeof useGetEventsQuery>;
 export type GetEventsLazyQueryHookResult = ReturnType<typeof useGetEventsLazyQuery>;
 export type GetEventsQueryResult = Apollo.QueryResult<GetEventsQuery, GetEventsQueryVariables>;
+export const GetSideBarShowDocument = gql`
+    query GetSideBarShow {
+  sidebarShow @client
+}
+    `;
+
+/**
+ * __useGetSideBarShowQuery__
+ *
+ * To run a query within a React component, call `useGetSideBarShowQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetSideBarShowQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetSideBarShowQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetSideBarShowQuery(baseOptions?: Apollo.QueryHookOptions<GetSideBarShowQuery, GetSideBarShowQueryVariables>) {
+        return Apollo.useQuery<GetSideBarShowQuery, GetSideBarShowQueryVariables>(GetSideBarShowDocument, baseOptions);
+      }
+export function useGetSideBarShowLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetSideBarShowQuery, GetSideBarShowQueryVariables>) {
+          return Apollo.useLazyQuery<GetSideBarShowQuery, GetSideBarShowQueryVariables>(GetSideBarShowDocument, baseOptions);
+        }
+export type GetSideBarShowQueryHookResult = ReturnType<typeof useGetSideBarShowQuery>;
+export type GetSideBarShowLazyQueryHookResult = ReturnType<typeof useGetSideBarShowLazyQuery>;
+export type GetSideBarShowQueryResult = Apollo.QueryResult<GetSideBarShowQuery, GetSideBarShowQueryVariables>;
+export const GetLoadingBarStatusDocument = gql`
+    query GetLoadingBarStatus {
+  loadingBarStatus @client
+}
+    `;
+
+/**
+ * __useGetLoadingBarStatusQuery__
+ *
+ * To run a query within a React component, call `useGetLoadingBarStatusQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetLoadingBarStatusQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetLoadingBarStatusQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetLoadingBarStatusQuery(baseOptions?: Apollo.QueryHookOptions<GetLoadingBarStatusQuery, GetLoadingBarStatusQueryVariables>) {
+        return Apollo.useQuery<GetLoadingBarStatusQuery, GetLoadingBarStatusQueryVariables>(GetLoadingBarStatusDocument, baseOptions);
+      }
+export function useGetLoadingBarStatusLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLoadingBarStatusQuery, GetLoadingBarStatusQueryVariables>) {
+          return Apollo.useLazyQuery<GetLoadingBarStatusQuery, GetLoadingBarStatusQueryVariables>(GetLoadingBarStatusDocument, baseOptions);
+        }
+export type GetLoadingBarStatusQueryHookResult = ReturnType<typeof useGetLoadingBarStatusQuery>;
+export type GetLoadingBarStatusLazyQueryHookResult = ReturnType<typeof useGetLoadingBarStatusLazyQuery>;
+export type GetLoadingBarStatusQueryResult = Apollo.QueryResult<GetLoadingBarStatusQuery, GetLoadingBarStatusQueryVariables>;
 
       export interface PossibleTypesResultData {
         possibleTypes: {

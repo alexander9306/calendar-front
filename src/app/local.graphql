@@ -1,10 +1,10 @@
-# query GetSideBarShow {
-#   sidebarShow @client
-# }
+query GetSideBarShow {
+  sidebarShow @client
+}
 
-# query GetLoadingBarStatus {
-#   loadingBarStatus @client
-# }
+query GetLoadingBarStatus {
+  loadingBarStatus @client
+}
 
 # query GetLoginStatus {
 #   isLoggedIn @client

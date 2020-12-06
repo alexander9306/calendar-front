@@ -90,8 +90,8 @@ const Calendar: React.FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Calendar" />
-      <h1>Calendar app</h1>
       <div className="container pt-5">
+        <h1 className="pb-2">Calendar app</h1>
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"

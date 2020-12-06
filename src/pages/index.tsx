@@ -1,5 +1,5 @@
 import React from "react";
-import Calendar from "../app/calendars/calendar.component";
+import Calendar from "../app/calendars/calendars.component";
 
 const IndexPage: React.FunctionComponent = () => <Calendar />;
 

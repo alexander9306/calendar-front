@@ -105,7 +105,7 @@ const Calendar: React.FunctionComponent = () => {
           selectMirror
           dayMaxEvents
           weekends
-          initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+          events={INITIAL_EVENTS}
           select={handleDateSelect}
           eventContent={renderEventContent} // custom render function
           eventClick={handleEventClick}

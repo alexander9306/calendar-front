@@ -1,6 +1,6 @@
 overwrite: true
 schema: 
-  - ${API_URI:http://localhost:4000/graphql}
+  - ${API_URI:http://localhost:3000/graphql}
   - "src/apollo-client/typedef.graphql"
 documents: 
   - './src/app/**/*.graphql'
@@ -15,16 +15,8 @@ generates:
     config:
       apolloClientVersion: 3
       skipTypeNameForRoot: false
+      scalars:
+        DateTime: string
     hooks:
       afterOneFileWrite:
         - eslint --fix
-
-  # src/app/generated/persisted-query-ids/client.json:
-  #     - graphql-codegen-persisted-query-ids:
-  #           output: client
-  #           algorithm: sha256
-
-  # src/app/generated/persisted-query-ids/server.json:
-  #     - graphql-codegen-persisted-query-ids:
-  #           output: server
-  #           algorithm: sha256

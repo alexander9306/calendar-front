@@ -6,5 +6,4 @@ extend type Query {
   isDarkTheme: Boolean!
   sidebarShow: stringOrBoolean!
   loadingBarStatus: Int!
-  permisosSession: viewier_permisos!
 }

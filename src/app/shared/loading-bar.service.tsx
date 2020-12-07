@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { loadingBarStatusVar } from "../../apollo-client/variables";
 
 function randomInteger(min: number, max: number) {
@@ -55,7 +55,6 @@ export default function useLoadingBar(): [
   typeof stopLoading
 ] {
   const [loader, setLoader] = useState<ReturnType<typeof setInterval>>();
-  // const [timeFn, setTimeFn] = useState<ReturnType<typeof setTimeout>>();
 
   function startLoading() {
     function load() {

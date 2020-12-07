@@ -2,9 +2,3 @@ query GetLoadingBarStatus {
   loadingBarStatus @client
 }
 
-query GetNewEventModalStatus {
-  newEventModal @client {
-    show
-    selectInfo
-  }
-}

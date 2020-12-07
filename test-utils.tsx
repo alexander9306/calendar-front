@@ -6,12 +6,12 @@ import { ApolloProvider } from "@apollo/client";
 import { setupServer } from "msw/node";
 import userEvent from "@testing-library/user-event";
 import client from "./src/apollo-client/client";
-import requestHandlers from "./request-handlers";
 
 const AllTheProviders: React.FunctionComponent = ({ children }) => {
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
 };
 
+// Allow any for brabary
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type CustomRender = (ui: JSX.Element, options?: any) => RenderResult;
 

@@ -13,7 +13,6 @@ export type Scalars = {
   Float: number;
   /** A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format. */
   DateTime: string;
-  Function: any;
 };
 
 export type CreateEventInput = {
@@ -39,9 +38,7 @@ export type Event = {
 export type EventModal = {
   __typename?: 'EventModal';
   show: Scalars['Boolean'];
-  selectInfo?: Maybe<Scalars['Function']>;
 };
-
 
 export type Mutation = {
   __typename?: 'Mutation';
@@ -70,7 +67,6 @@ export type Query = {
   event: Event;
   events: Array<Event>;
   loadingBarStatus: Scalars['Int'];
-  newEventModal: EventModal;
 };
 
 
@@ -170,17 +166,6 @@ export type GetLoadingBarStatusQueryVariables = Exact<{ [key: string]: never; }>
 export type GetLoadingBarStatusQuery = (
   { __typename?: 'Query' }
   & Pick<Query, 'loadingBarStatus'>
-);
-
-export type GetNewEventModalStatusQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetNewEventModalStatusQuery = (
-  { __typename?: 'Query' }
-  & { newEventModal: (
-    { __typename?: 'EventModal' }
-    & Pick<EventModal, 'show' | 'selectInfo'>
-  ) }
 );
 
 export const NewEventFragmentDoc = gql`
@@ -392,39 +377,6 @@ export function useGetLoadingBarStatusLazyQuery(baseOptions?: Apollo.LazyQueryHo
 export type GetLoadingBarStatusQueryHookResult = ReturnType<typeof useGetLoadingBarStatusQuery>;
 export type GetLoadingBarStatusLazyQueryHookResult = ReturnType<typeof useGetLoadingBarStatusLazyQuery>;
 export type GetLoadingBarStatusQueryResult = Apollo.QueryResult<GetLoadingBarStatusQuery, GetLoadingBarStatusQueryVariables>;
-export const GetNewEventModalStatusDocument = gql`
-    query GetNewEventModalStatus {
-  newEventModal @client {
-    show
-    selectInfo
-  }
-}
-    `;
-
-/**
- * __useGetNewEventModalStatusQuery__
- *
- * To run a query within a React component, call `useGetNewEventModalStatusQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetNewEventModalStatusQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetNewEventModalStatusQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetNewEventModalStatusQuery(baseOptions?: Apollo.QueryHookOptions<GetNewEventModalStatusQuery, GetNewEventModalStatusQueryVariables>) {
-        return Apollo.useQuery<GetNewEventModalStatusQuery, GetNewEventModalStatusQueryVariables>(GetNewEventModalStatusDocument, baseOptions);
-      }
-export function useGetNewEventModalStatusLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNewEventModalStatusQuery, GetNewEventModalStatusQueryVariables>) {
-          return Apollo.useLazyQuery<GetNewEventModalStatusQuery, GetNewEventModalStatusQueryVariables>(GetNewEventModalStatusDocument, baseOptions);
-        }
-export type GetNewEventModalStatusQueryHookResult = ReturnType<typeof useGetNewEventModalStatusQuery>;
-export type GetNewEventModalStatusLazyQueryHookResult = ReturnType<typeof useGetNewEventModalStatusLazyQuery>;
-export type GetNewEventModalStatusQueryResult = Apollo.QueryResult<GetNewEventModalStatusQuery, GetNewEventModalStatusQueryVariables>;
 
       export interface PossibleTypesResultData {
         possibleTypes: {

@@ -37,13 +37,14 @@ module.exports = {
         purgeOnly: ["node_modules/antd/dist/antd.css"], // Purge only these files/folders
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images/`,
-      },
-    },
+    // Use to especify the images folder
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/assets/images/`,
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {

@@ -1,11 +1,8 @@
-scalar Function
 
 type EventModal {
   show: Boolean!
-  selectInfo: Function
 }
 
 extend type Query {
   loadingBarStatus: Int!
-  newEventModal: EventModal!
 }

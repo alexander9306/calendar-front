@@ -1,6 +1,7 @@
 import React from "react";
 import { rest } from "msw";
 import { render, screen, waitFor, server } from "test-utils";
+import { APIDateFormatter } from "../shared/utils";
 import Calendar from "./calendar.component";
 
 import { GetEventsQuery } from "../generated/api";
@@ -16,14 +17,21 @@ describe("Events Component", () => {
     test("Verify event's title shows up", async () => {
       server.use(
         rest.post(url, (req, res, ctx) => {
+          const date = new APIDateFormatter(new Date());
           const response: Response = {
             data: {
               events: [
                 {
                   id: "01",
                   name: "test-01",
-                  start: new Date().toISOString(),
-                  end: new Date().toISOString(),
+                  start: date.toISOString(),
+                  end: date.isLessThan().toISOString(),
+                },
+                {
+                  id: "02",
+                  name: "test-02",
+                  start: date.isLessThan().toISOString(),
+                  end: date.isLessThan().isLessThan().toISOString(),
                 },
               ],
             },
@@ -36,9 +44,9 @@ describe("Events Component", () => {
 
       expect(screen.getByText("Calendar app")).toBeInTheDocument();
 
-      await waitFor(() => {
-        expect(screen.getByText("Calendar app")).toBeInTheDocument();
-      });
+      //   await waitFor(() => {
+      //     expect(screen.getByText(/test/i)).toBeInTheDocument();
+      //   });
     });
   });
 });

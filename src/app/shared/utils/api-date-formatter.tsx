@@ -1,5 +1,9 @@
 export default class APIDateFormatter {
-  constructor(private date: Date) {}
+  private date: Date;
+
+  constructor(date: Date | string) {
+    this.date = new Date(date);
+  }
 
   isLessThan(): APIDateFormatter {
     this.date = new Date(
@@ -15,7 +19,6 @@ export default class APIDateFormatter {
   }
 
   toISOString(): string {
-    this.date.setUTCHours(0, 0, 0, 0);
     return this.date.toISOString();
   }
 }

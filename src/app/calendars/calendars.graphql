@@ -1,7 +1,66 @@
 query GetEvents {
   events {
-    id
-    name
-    date
+    ...NewEvent
   }
+}
+
+query GetEvent($id: ID!) {
+  event(id: $id) {
+    ...NewEvent
+    description
+  }
+}
+
+mutation CreateEvent(
+  $id: ID!
+  $name: String!
+  $description: String
+  $start: DateTime!
+  $end: DateTime!
+) {
+  createEvent(
+    createEventInput: {
+      id: $id
+      name: $name
+      description: $description
+      start: $start
+      end: $end
+    }
+  ) {
+    ...NewEvent
+  }
+}
+
+mutation UpdateEvent(
+  $id: ID!
+  $name: String!
+  $description: String
+  $start: DateTime!
+  $end: DateTime!
+) {
+  updateEvent(
+    updateEventInput: {
+      id: $id
+      name: $name
+      description: $description
+      start: $start
+      end: $end
+    }
+  ) {
+    ...NewEvent
+    description
+  }
+}
+
+mutation RemoveEvent($id: ID!) {
+  removeEvent(id: $id) {
+    id
+  }
+}
+
+fragment NewEvent on Event {
+  id
+  name
+  start
+  end
 }

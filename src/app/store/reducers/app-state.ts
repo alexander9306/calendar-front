@@ -2,7 +2,6 @@ import type { CSidebar } from "@coreui/react";
 
 export interface AppState {
   sidebarShow: CSidebar["show"];
-  isDarkTheme: boolean;
 }
 
 export interface AppDispatch extends Partial<AppState> {
@@ -11,7 +10,6 @@ export interface AppDispatch extends Partial<AppState> {
 
 const initialState: AppState = {
   sidebarShow: "responsive",
-  isDarkTheme: false,
 };
 
 export function appReducer(

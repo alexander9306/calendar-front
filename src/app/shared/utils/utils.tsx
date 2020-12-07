@@ -36,20 +36,6 @@ export function dateFormatter(date: Date | string): string {
 }
 
 /**
- * Transform numbers to currency.
- * @param value the number to transform
- * @param sign adds the dollar sign, defaults to true
- * @example
- * // returns $3.00
- * toCurrency(3);
- */
-export function toCurrency(value?: number | null, sign = true): string {
-  const dollarSign = sign ? "$" : "";
-  if (!value) return `${dollarSign}0.00`;
-  return dollarSign + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-}
-
-/**
  * Avoid an async call to run or edit the dom if current component is not mounted
  * @example
  * const isMountedRef = useIsMountedRef();

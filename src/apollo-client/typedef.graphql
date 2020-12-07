@@ -1,9 +1,11 @@
-scalar stringOrBoolean
+scalar Function
 
+type EventModal {
+  show: Boolean!
+  selectInfo: Function
+}
 
 extend type Query {
-  isLoggedIn: Boolean!
-  isDarkTheme: Boolean!
-  sidebarShow: stringOrBoolean!
   loadingBarStatus: Int!
+  newEventModal: EventModal!
 }

@@ -42,6 +42,7 @@
     "react-top-loading-bar": "^2.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "uuid": "^8.3.1",
     "validator": "^13.5.1"
   },
   "devDependencies": {
@@ -64,6 +65,7 @@
     "@types/react-test-renderer": "^16.9.4",
     "@types/react-virtualized-auto-sizer": "^1.0.0",
     "@types/react-window": "^1.8.2",
+    "@types/uuid": "^8.3.0",
     "@types/validator": "^13.1.1",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",

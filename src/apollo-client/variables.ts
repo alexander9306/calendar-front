@@ -1,6 +1,8 @@
 import { makeVar } from "@apollo/client";
-import type { CSidebar } from "@coreui/react";
+import type { EventModal } from "../app/generated/api";
 
-export const sidebarShowVar = makeVar<CSidebar["show"]>("responsive");
-export const isDarkThemeVar = makeVar(false);
 export const loadingBarStatusVar = makeVar(0);
+export const newEventModalVar = makeVar<EventModal>({
+  show: false,
+  selectInfo: undefined,
+});

@@ -15,12 +15,3 @@ export function setSidebarAction(
     sidebarShow: show,
   };
 }
-
-export function setDarkThemeAction(
-  value: ReduxState["data"]["isDarkTheme"]
-): ReduxDistpatch {
-  return {
-    type: "SET_APP_STATE",
-    isDarkTheme: value,
-  };
-}

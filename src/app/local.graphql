@@ -1,26 +1,10 @@
-query GetSideBarShow {
-  sidebarShow @client
-}
-
 query GetLoadingBarStatus {
   loadingBarStatus @client
 }
 
-# query GetLoginStatus {
-#   isLoggedIn @client
-# }
-
-# query GetPermisosSession {
-#   permisosSession @client {
-#     tienda
-#     admin
-#   }
-# }
-
-# query GetSessionInfo {
-#   permisosSession @client {
-#     tienda
-#     admin
-#   }
-#   isLoggedIn @client
-# }
+query GetNewEventModalStatus {
+  newEventModal @client {
+    show
+    selectInfo
+  }
+}

@@ -15,7 +15,7 @@ import NewEvent from "./new-event.component";
 import EventDetails from "./event-details.component";
 
 const Calendar: React.FunctionComponent = () => {
-  const [events, error] = useEventsAPI();
+  const [events] = useEventsAPI();
 
   const [getEvent, foundEvent, getEventError] = useGetEventAPI();
   const [showDetail, setShowDetail] = useState(false);

@@ -3,7 +3,7 @@ import { rest } from "msw";
 import { render, screen, waitFor, server } from "test-utils";
 import Calendar from "./calendar.component";
 
-import { GetEventsQuery, GetEventsQueryVariables } from "../generated/api";
+import { GetEventsQuery } from "../generated/api";
 
 interface Response {
   data?: GetEventsQuery;

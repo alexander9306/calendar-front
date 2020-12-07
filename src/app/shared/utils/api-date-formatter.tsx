@@ -19,6 +19,7 @@ export default class APIDateFormatter {
   }
 
   toISOString(): string {
+    // this.date.setUTCHours(0, 0, 0, 0);
     return this.date.toISOString();
   }
 }

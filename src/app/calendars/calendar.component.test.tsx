@@ -34,8 +34,10 @@ describe("Events Component", () => {
 
       render(<Calendar />);
 
+      expect(screen.getByText("Calendar app")).toBeInTheDocument();
+
       await waitFor(() => {
-        expect(screen.getByText("test-01")).toBeInTheDocument();
+        expect(screen.getByText("Calendar app")).toBeInTheDocument();
       });
     });
   });
